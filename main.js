@@ -1,17 +1,24 @@
-const {app, BrowserWindow} = require ('electron')
+const { app, BrowserWindow, ipcMain } = require("electron");
+const path = require("path");
 
 let mainWindow;
 
-app.whenReady().then(() => {
+function createWindow() {
+  mainWindow = new BrowserWindow({
+    width: 600,
+    height: 450,
+    webPreferences: {
+      nodeIntegration: true,
+      contextIsolation: false
+    }
+  });
 
-    mainWindow = new BrowserWindow({
-        width: 800,
-        height: 400,
-        webPreferences: {
-            nodeIntegration: true
-        }
-    })  
-    
-    mainWindow.loadFile('index.html'); // oq ela (mainwindow) tem q carregar como conteudo da page
+  mainWindow.loadFile(path.join(__dirname, "login.html"));
+  mainWindow.webContents.openDevTools();
+}
 
-})
+app.whenReady().then(createWindow);
+
+ipcMain.on("login-sucesso", () => {
+  mainWindow.loadFile(path.join(__dirname, "lousa.html"));
+});
