@@ -8,6 +8,8 @@ function createWindow() {
     width: 550,
     height: 650,
     resizable: false,
+    transparent: true,
+    preload: path.join(__dirname, 'preload.js'),
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false
@@ -19,15 +21,26 @@ function createWindow() {
   });
   
   mainWindow.loadFile(path.join(__dirname, "login.html"));
-  //mainWindow.webContents.openDevTools();
+  mainWindow.webContents.openDevTools();
 }
 
 app.whenReady().then(createWindow);
 
+// login bem sucedido!
 ipcMain.on("login-sucesso", () => {
   mainWindow.loadFile(path.join(__dirname, "lousa.html"));
 });
 
-// ipcMain.on("login-invalido", () => {
-//   dialog.showErrorBox("Erro de Login", "Usuário ou senha inválidos.");
-// });
+// ouve a msg de minimizar o app
+ipcMain.on("minimize-app", () => {
+  if (mainWindow) {
+    mainWindow.minimize();
+  }
+});
+
+// ouve a msg de fechar o app
+ipcMain.on("close-app", () => {
+  if (mainWindow) {
+    mainWindow.close();
+  }
+});

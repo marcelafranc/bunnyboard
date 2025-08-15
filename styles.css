@@ -16,6 +16,12 @@
   background: #FAE7E0;
   text-align: center;
   -webkit-app-region: drag;
+  border-radius: 36px;
+  overflow: hidden;
+}
+
+html {
+  background-color: transparent; 
 }
 
 textarea {
@@ -88,9 +94,9 @@ input {
 }
 
 input:focus {
-  outline: none; /* remove o contorno laranja padrão */
-  border-color: #764852; /* mantém a mesma cor */
-  box-shadow: 0 0 5px #76485255; /* opcional: brilho suave */
+  outline: none;
+  border-color: #764852;
+  box-shadow: 0 0 5px #76485255;
 }
 
 button {
@@ -130,22 +136,46 @@ button:hover {
   color: #764852;
 }
 
-.username::placeholder,
-.password::placeholder {
-  /* Aqui você define a cor que desejar */
+.username::placeholder, .password::placeholder {
   color: #764852;
 }
 
 #mensagem {
-  color: #764852; /* Um vermelho mais escuro, bom para erros */
+  color: #764852;
   font-weight: bold;
-  margin-top: 15px; /* Adiciona um espaço acima da mensagem */
-  
-  /* Garante que o elemento ocupe espaço mesmo quando vazio, 
-     evitando que o layout "pule" quando a mensagem aparece */
+  margin-top: 15px;
   min-height: 24px; 
-
-  /* **MUITO IMPORTANTE:** A mensagem deve começar invisível,
-     pois seu JavaScript a torna visível. */
   visibility: hidden; 
+}
+
+
+button, input, p, .window-buttons, .window-controls {
+  -webkit-app-region: no-drag;
+}
+
+.window-controls{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+.window-buttons{
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.window-buttons:hover, #btnLogin:hover, #username:hover, #password:hover, .logo:hover {
+  transform: scale(1.1);
+}
+
+.window-buttons:active, #btnLogin:active, #username:active, #password:active, .logo:active {
+  transform: scale(0.95);
+}
+
+#btnLogin, #username, #password, .logo {
+  transition: transform 0.2s ease;
 }

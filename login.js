@@ -6,6 +6,12 @@ const SENHA = "1234";
 const btnLogin = document.getElementById("btnLogin");
 const mensagemErro = document.getElementById("mensagem");
 
+const minimizeBtn = document.getElementById("minimize-btn");
+const closeBtn = document.getElementById("close-btn");
+
+console.log("Botão de minimizar encontrado:", minimizeBtn);
+console.log("Botão de fechar encontrado:", closeBtn);
+
 let erroTimer; // timer da mensagem
 
 btnLogin.addEventListener("click", () => {
@@ -31,4 +37,16 @@ btnLogin.addEventListener("click", () => {
     }, 3000);
   }
   
+});
+
+// minimizar app
+minimizeBtn.addEventListener("click", () => {
+  console.log("Botão MINIMIZAR clicado!");
+  ipcRenderer.send("minimize-app");
+});
+
+// fechar app
+closeBtn.addEventListener("click", () => {
+  console.log("Botão FECHAR clicado!");
+  ipcRenderer.send("close-app");
 });
