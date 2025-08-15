@@ -4,10 +4,10 @@ Um editor de texto simples e fofo estilo lousa para anotações rápidas, constr
 
 ## Screenshots
 
-![Screenshot da tela de login](src/screenshots/login_page.png)
-![Screenshot da tela de anotações](src/screenshots/write_page.png)
-
-
+<p>
+    <img src="src/screenshots/login_page.png" width="300">
+    <img src="src/screenshots/write_page.png" width="300"> 
+</p>
 
 ## Como rodar o projeto
 
