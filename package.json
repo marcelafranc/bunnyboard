@@ -1,7 +1,9 @@
 {
   "name": "lousa-app",
   "version": "1.0.0",
+  "description": "Bloco de notas Bunnyboard",
   "main": "main.js",
+  "author": "Marcela",
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
