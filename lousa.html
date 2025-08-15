@@ -10,7 +10,16 @@
   <textarea id="lousa" placeholder="Escreva aqui..."></textarea>
   <br />
   <button id="btnLimpar">Limpar</button>
-
+  <div id="modal-confirmacao" class="modal-overlay hidden">
+  <div class="modal-box">
+    <h3>Confirmar Limpeza</h3>
+    <p>Tem certeza que deseja limpar todo o conteúdo? Esta ação não pode ser desfeita.</p>
+    <div class="modal-botoes">
+      <button id="btnConfirmarLimpeza">Sim, limpar</button>
+      <button id="btnCancelarLimpeza">Cancelar</button>
+    </div>
+  </div>
+</div>
   <script src="lousa.js"></script>
 </body>
 </html>
