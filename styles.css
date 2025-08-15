@@ -1,8 +1,21 @@
-body {
+/* body {
   font-family: Arial, sans-serif;
   text-align: center;
-  background: #f9f9f9;
+  background: #FAE7E0;
   padding: 20px;
+} */
+
+ body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #FAE7E0;
+  text-align: center;
+  -webkit-app-region: drag;
 }
 
 textarea {
@@ -56,4 +69,83 @@ input, button {
 
 .pixel-font {
   font-family: 'Pixelify Sans', sans-serif;
+}
+
+.logo {
+  margin-top: 50px;
+  width: 150px;
+  height: auto;
+}
+
+input {
+  padding: 10px;
+  margin: 5px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  border-color: #764852;
+  width: 100px;
+}
+
+input:focus {
+  outline: none; /* remove o contorno laranja padrão */
+  border-color: #764852; /* mantém a mesma cor */
+  box-shadow: 0 0 5px #76485255; /* opcional: brilho suave */
+}
+
+button {
+  padding: 10px;
+  margin: 5px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none; 
+  background-color: #764852;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #764852;
+}
+
+
+.username {
+  background-image: url('src/images/userpic.svg');
+  background-repeat: no-repeat;
+  background-size: 24px;
+  background-position: right 15px center;
+  padding-right: 45px;
+}
+
+.password {
+  background-image: url('src/images/keypic.svg');
+  background-repeat: no-repeat;
+  background-size: 24px;
+  background-position: right 15px center; 
+  padding-right: 45px;
+
+}
+
+.title {
+  color: #764852;
+}
+
+.username::placeholder,
+.password::placeholder {
+  /* Aqui você define a cor que desejar */
+  color: #764852;
+}
+
+#mensagem {
+  color: #764852; /* Um vermelho mais escuro, bom para erros */
+  font-weight: bold;
+  margin-top: 15px; /* Adiciona um espaço acima da mensagem */
+  
+  /* Garante que o elemento ocupe espaço mesmo quando vazio, 
+     evitando que o layout "pule" quando a mensagem aparece */
+  min-height: 24px; 
+
+  /* **MUITO IMPORTANTE:** A mensagem deve começar invisível,
+     pois seu JavaScript a torna visível. */
+  visibility: hidden; 
 }

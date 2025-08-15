@@ -5,18 +5,21 @@ let mainWindow;
 
 function createWindow() {
   mainWindow = new BrowserWindow({
-    width: 600,
-    height: 450,
+    width: 550,
+    height: 650,
+    resizable: false,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false
     },
+    autoHideMenuBar:true,
+    frame: false,
     parent: null,
     modal: false
   });
-
+  
   mainWindow.loadFile(path.join(__dirname, "login.html"));
-  mainWindow.webContents.openDevTools();
+  //mainWindow.webContents.openDevTools();
 }
 
 app.whenReady().then(createWindow);

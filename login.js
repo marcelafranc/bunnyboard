@@ -10,8 +10,10 @@ let erroTimer; // timer da mensagem
 
 btnLogin.addEventListener("click", () => {
 
-  const usuario = document.getElementById("usuario").value;
-  const senha = document.getElementById("senha").value;
+  const usuario = document.getElementById("username").value;
+  const senha = document.getElementById("password").value;
+  console.log("Usuário:", usuario);
+  console.log("Senha:", senha);
 
   if (usuario === USUARIO && senha === SENHA) {
     ipcRenderer.send("login-sucesso");

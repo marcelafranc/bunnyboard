@@ -2,17 +2,21 @@
 <html>
 <head>
   <meta charset="UTF-8" />
-  <title>Login - Lousa</title>
+  <title>Bunnyboard login</title>
   <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h2 class="pixel-font">bunnyboard</h2>
-  <input type="text" id="usuario" placeholder="Usuário" class="pixel-font"/>
-  <input type="password" id="senha" placeholder="Senha" class="pixel-font"/>
-  <button id="btnLogin" class="pixel-font">Entrar</button>
+  <img src="src/images/bunny_logo.png" alt="Logo" class="logo"/>
+  <h2 class="pixel-font title">bunnyboard</h2>
 
-  <p id="mensagem" class="mensagem-erro"></p>
+  <input type="text" id="username" placeholder="user" class="pixel-font username"/>
+
+  <input type="password" id="password" placeholder="password" class="pixel-font password"/>
+
+  <button id="btnLogin" class="pixel-font">login</button>
+
+  <p id="mensagem" class="pixel-font"></p>
 
   <script src="login.js"></script>
 </body>
