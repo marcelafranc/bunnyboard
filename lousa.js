@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const { ipcRenderer } = require("electron");
 
 const arquivo = path.join(__dirname, "conteudo.txt");
 const textarea = document.getElementById("lousa");
@@ -21,8 +22,11 @@ textarea.addEventListener("input", () => {
 
 // Botão limpar com confirmação
 btnLimpar.addEventListener("click", () => {
-  if (confirm("Tem certeza que deseja limpar o conteúdo?")) {
-    textarea.value = "";
-    fs.writeFileSync(arquivo, "", "utf8");
-  }
+  ipcRenderer.send("mostrar-dialogo-confirmacao");
+});
+
+// resposta
+ipcRenderer.on("limpeza-confirmada", () => {
+  textarea.value = "";
+  fs.writeFileSync(arquivo, "", "utf8");
 });
