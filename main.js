@@ -10,7 +10,9 @@ function createWindow() {
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false
-    }
+    },
+    parent: null,
+    modal: false
   });
 
   mainWindow.loadFile(path.join(__dirname, "login.html"));
@@ -22,3 +24,7 @@ app.whenReady().then(createWindow);
 ipcMain.on("login-sucesso", () => {
   mainWindow.loadFile(path.join(__dirname, "lousa.html"));
 });
+
+// ipcMain.on("login-invalido", () => {
+//   dialog.showErrorBox("Erro de Login", "Usuário ou senha inválidos.");
+// });
