@@ -3,17 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <title>Lousa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h2>Lousa</h2>
+
+  <div class="window-controls">
+    <img src="src/images/BtnBack.png" id="backbtn" class="window-buttons"/>
+    <img src="src/images/BtnMinimize.png" id="minimize-btn" class="window-buttons"/>
+    <img src="src/images/close_window_button.png" id="close-btn" class="window-buttons"/>
+  </div>
+
+  <h2 class="pixel-font title">bunnyboard</h2>
+
+  <!-- BLOCO DE NOTAS -->
   <textarea id="lousa" placeholder="Escreva aqui..."></textarea>
   <br />
-  <button id="btnLimpar">Limpar</button>
+  <button id="btnLimpar" class="pixel-font">Limpar</button>
+  <img src="src/images/bunny_logo.png" id="low_icon"/>
   <div id="modal-confirmacao" class="modal-overlay hidden">
   <div class="modal-box">
-    <h3>Confirmar Limpeza</h3>
-    <p>Tem certeza que deseja limpar todo o conteúdo? Esta ação não pode ser desfeita.</p>
+    <h3>Tem certeza?</h3>
+    <!-- <p>Tem certeza que deseja limpar todo o conteúdo? Esta ação não pode ser desfeita.</p> -->
     <div class="modal-botoes">
       <button id="btnConfirmarLimpeza">Sim, limpar</button>
       <button id="btnCancelarLimpeza">Cancelar</button>

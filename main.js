@@ -10,6 +10,7 @@ function createWindow() {
     resizable: false,
     transparent: true,
     preload: path.join(__dirname, 'preload.js'),
+    icon: path.join(__dirname, 'src/images/icon_ico.ico'),
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false
@@ -21,7 +22,7 @@ function createWindow() {
   });
   
   mainWindow.loadFile(path.join(__dirname, "login.html"));
-  mainWindow.webContents.openDevTools();
+  //mainWindow.webContents.openDevTools();
 }
 
 app.whenReady().then(createWindow);
@@ -42,5 +43,12 @@ ipcMain.on("minimize-app", () => {
 ipcMain.on("close-app", () => {
   if (mainWindow) {
     mainWindow.close();
+  }
+});
+
+// ouve o botao de voltar
+ipcMain.on("voltar", () => {
+  if (mainWindow) {
+    mainWindow.loadFile(path.join(__dirname, "login.html"));
   }
 });

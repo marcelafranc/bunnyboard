@@ -30,6 +30,8 @@ textarea {
   font-size: 16px;
   padding: 10px;
   resize: none;
+  margin-bottom: 20px;
+  font-family: 'Pixelify Sans', sans-serif;
 }
 
 input, button {
@@ -62,6 +64,8 @@ input, button {
   border-radius: 8px;
   text-align: center;
   max-width: 400px;
+  font-family: 'Pixelify Sans', sans-serif;
+  color: #764852;
 }
 
 .modal-botoes {
@@ -71,6 +75,17 @@ input, button {
 .modal-botoes button {
   margin: 0 10px;
   padding: 10px 20px;
+  font-family: 'Pixelify Sans', sans-serif;
+  color: white;
+  transition: transform 0.2s ease; 
+}
+
+.modal-botoes button:hover {
+  transform: scale(1.1);
+}
+
+.modal-botoes button:active {
+  transform: scale(0.95);
 }
 
 .pixel-font {
@@ -149,33 +164,74 @@ button:hover {
 }
 
 
-button, input, p, .window-buttons, .window-controls {
+button, input, p, .window-buttons, .window-controls, #lousa {
   -webkit-app-region: no-drag;
 }
 
 .window-controls{
   position: absolute;
   top: 10px;
+  left: 10px;
   right: 10px;
   display: flex;
+  justify-content: flex-end;
   gap: 8px;
 }
 
+#backbtn {
+  margin-right: auto;
+  width: 35px;
+  height: 35px;
+}
+
 .window-buttons{
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   cursor: pointer;
   transition: transform 0.2s ease;
 }
 
-.window-buttons:hover, #btnLogin:hover, #username:hover, #password:hover, .logo:hover {
+.window-buttons:hover, #btnLogin:hover, #username:hover, #password:hover, .logo:hover, #btnLimpar:hover {
   transform: scale(1.1);
 }
 
-.window-buttons:active, #btnLogin:active, #username:active, #password:active, .logo:active {
+.window-buttons:active, #btnLogin:active, #username:active, #password:active, .logo:active, #btnLimpar:active {
   transform: scale(0.95);
 }
 
-#btnLogin, #username, #password, .logo {
+#btnLogin, #username, #password, .logo, #btnLimpar {
   transition: transform 0.2s ease;
+}
+
+#lousa {
+  border-radius: 16px;
+  border: 1px solid #ccc;
+  border-color: #764852;
+}
+
+#lousa:focus {
+  outline: none;
+  border-color: #764852;
+  box-shadow: 0 0 5px #76485255;
+}
+
+#low_icon {
+  margin-top: 20px;
+  width: 100px;
+  height: auto;
+}
+
+#btnLimpar {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  margin: 0;
+}
+
+#low_icon {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  width: 80px;
 }

@@ -1,7 +1,7 @@
 const { ipcRenderer } = require("electron");
 
 const USUARIO = "marcela";
-const SENHA = "1234";
+const SENHA = "123";
 
 const btnLogin = document.getElementById("btnLogin");
 const mensagemErro = document.getElementById("mensagem");
