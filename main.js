@@ -30,6 +30,13 @@ app.whenReady().then(createWindow);
 // login bem sucedido!
 ipcMain.on("login-sucesso", () => {
   mainWindow.loadFile(path.join(__dirname, "lousa.html"));
+
+  mainWindow.webContents.on('did-finish-load', () => {
+    const userDataPath = app.getPath('userData');
+        const filePath = path.join(userDataPath, 'conteudo.txt');
+    
+    mainWindow.webContents.send('caminho-do-arquivo', filePath);
+  });
 });
 
 // ouve a msg de minimizar o app
